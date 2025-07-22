@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Failure Prediction</title>
+</head>
+<body>
+    <h2>Heart Failure Prediction Form</h2>
+    <form action="/predict" method="post">
+        <label>Age:</label><input type="number" name="age" step="any"><br>
+        <label>Anaemia (0/1):</label><input type="number" name="anaemia"><br>
+        <label>Creatinine Phosphokinase:</label><input type="number" name="creatinine_phosphokinase" step="any"><br>
+        <label>Diabetes (0/1):</label><input type="number" name="diabetes"><br>
+        <label>Ejection Fraction:</label><input type="number" name="ejection_fraction"><br>
+        <label>High Blood Pressure (0/1):</label><input type="number" name="high_blood_pressure"><br>
+        <label>Platelets:</label><input type="number" name="platelets" step="any"><br>
+        <label>Serum Creatinine:</label><input type="number" name="serum_creatinine" step="any"><br>
+        <label>Serum Sodium:</label><input type="number" name="serum_sodium"><br>
+        <label>Sex (0 = Female, 1 = Male):</label><input type="number" name="sex"><br>
+        <label>Smoking (0/1):</label><input type="number" name="smoking"><br>
+        <label>Follow-up Time (in days):</label><input type="number" name="time"><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+        <h3>Prediction: {{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
+
